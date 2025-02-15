@@ -7,15 +7,14 @@
 }
 
 body {
-  background: #f7f8fc;
+  background: #ffffff; 
 }
 
-/* 🏡 Navbar Styling */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to right, #4F9165, #9bbfa7);
+  background: linear-gradient(to right, #b62c48, #FF859D);
   padding: 12px 20px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }

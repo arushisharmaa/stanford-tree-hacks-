@@ -6,7 +6,7 @@
   align-items: center;
   height: 100vh;  /* Full viewport height */
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #AFE2BF; 
   box-sizing: border-box;
 }
 
@@ -16,18 +16,19 @@ h1 {
   color: #003db8;
 }
 
-h3{ 
-  font-size: 4rem;
+h3 {
   margin-bottom: 20px;
   color: #003db8;
-
 }
 
-h3{ 
-  font-size: 3rem;
-  margin-bottom: 20px;
-  color: #a50b0b;
+h3.title { 
+  font-size: 4rem;  /* Large heading */
+  color: #003db8;
+}
 
+h3.subtitle { 
+  font-size: 3rem;  /* Smaller heading */
+  color: #a50b0b;
 }
 
 .card-grid {
@@ -42,7 +43,7 @@ h3{
 
 .card {
   background-color: white;
-  padding: 30px;  /* Increased padding */
+  padding: 50px;  /* Increased padding for larger cards */
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);  /* Stronger shadow for depth */
   transition: transform 0.3s ease;
@@ -50,7 +51,7 @@ h3{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;  /* Fixed height to make the cards larger */
+  height: 400px;  /* Increased height to make cards larger */
   text-align: center;
 }
 
@@ -58,12 +59,12 @@ h3{
   transform: scale(1.1);  /* Slightly larger on hover */
 }
 
-h3 {
+.card h3 {
   margin: 10px 0;
-  font-size: 1.5rem;  /* Increased font size */
+  font-size: 1.8rem;  /* Increased font size */
 }
 
-p {
-  font-size: 1.1rem;  /* Increased font size */
+.card p {
+  font-size: 1.2rem;  /* Increased font size */
   color: #555;
 }
