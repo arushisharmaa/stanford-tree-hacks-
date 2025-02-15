@@ -1,0 +1,11 @@
+In the context of AP Biology, mitosis is cell division for growth and repair, producing two identical daughter cells, while meiosis is cell division for sexual reproduction, producing four genetically diverse haploid gametes. 
+Mitosis:
+Purpose: Growth, repair, and asexual reproduction.
+Daughter Cells: Two genetically identical diploid cells.
+Phases: Prophase, prometaphase, metaphase, anaphase, and telophase.
+Key Events: Chromosome duplication, separation of sister chromatids, and cytokinesis (cell division). 
+Meiosis:
+Purpose: Production of gametes (sperm and egg cells) for sexual reproduction. 
+Daughter Cells: Four genetically diverse haploid cells. 
+Phases: Meiosis I (prophase I, metaphase I, anaphase I, telophase I) and Meiosis II (prophase II, metaphase II, anaphase II, telophase II). 
+Key Events: Homologous chromosome pairing, crossing over (genetic recombination), separation of homologous chromosomes (Meiosis I), and separation of sister chromatids (Meiosis II). 
