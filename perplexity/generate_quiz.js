@@ -1,18 +1,13 @@
-require('dotenv').config();  // This line should be at the top
+require('dotenv').config();
 const fs = require('fs').promises;
 const path = require('path');
-const fetch = require('node-fetch'); // Ensure you have node-fetch installed
-const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY ;  // Load the API key from the .env file
-// console.log(PERPLEXITY_KEY);  // Should print your API key if the .env file is loaded correctly
+const fetch = require('node-fetch');
+const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY ;
 
-
-
-// File paths
 const NOTES_PATH = path.join(__dirname, "..", "backend", "data", "transcript.txt");
 const QUESTIONS_PATH = path.join(__dirname, "questions.txt");
 const ANSWERS_PATH = path.join(__dirname, "answers.txt");
 
-// Function to read the transcript file
 async function readNotes() {
   try {
     return await fs.readFile(NOTES_PATH, 'utf8');
@@ -22,7 +17,6 @@ async function readNotes() {
   }
 }
 
-// Function to save content to a file
 async function saveToFile(filename, content) {
   try {
     await fs.writeFile(filename, content, 'utf8');
@@ -32,10 +26,9 @@ async function saveToFile(filename, content) {
   }
 }
 
-// Function to generate MCQs using AI API
 async function generateQuiz() {
   try {
-    const notes = await readNotes(); // Read transcript
+    const notes = await readNotes();
 
     if (!notes.trim()) {
       console.error("Transcript is empty! Cannot generate quiz.");
@@ -71,11 +64,9 @@ async function generateQuiz() {
     const data = await response.json();
     const quizContent = data.choices[0].message.content;
 
-    // Extract questions and answers separately
-    const questions = quizContent.replace(/Answer: [A-D]/g, '').trim(); // Remove answers
-    const answers = quizContent.match(/Answer: [A-D]/g)?.join('\n') || ''; // Extract answers
+    const questions = quizContent.replace(/Answer: [A-D]/g, '').trim();
+    const answers = quizContent.match(/Answer: [A-D]/g)?.join('\n') || '';
 
-    // Save questions and answers
     await saveToFile(QUESTIONS_PATH, questions);
     await saveToFile(ANSWERS_PATH, answers);
 
@@ -84,5 +75,4 @@ async function generateQuiz() {
   }
 }
 
-// Run the quiz generation
 generateQuiz();

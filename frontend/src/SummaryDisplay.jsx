@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./SummaryDisplay.css"; // Import CSS
+import "./SummaryDisplay.css";
 
 export default function SummaryDisplay() {
   const [summaryText, setSummaryText] = useState("");

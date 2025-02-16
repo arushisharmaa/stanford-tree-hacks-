@@ -4,7 +4,7 @@ export default function ResourcesDisplay() {
   const [resourcesText, setResourcesText] = useState("");
 
   useEffect(() => {
-    fetch("/resources.txt")  // Correct fetch path
+    fetch("/resources.txt")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch resources file");
@@ -15,21 +15,19 @@ export default function ResourcesDisplay() {
       .catch((error) => console.error("Error loading the file:", error));
   }, []);
 
-  // Function to parse and render the resources as links
   const renderResources = () => {
     if (!resourcesText) return null;
 
-    // Split the text by line breaks or specific delimiters (e.g., " - ")
     const lines = resourcesText.split('\n');
     return lines.map((line, index) => {
-      if (line.includes("http")) { // Check if the line contains a link
+      if (line.includes("http")) {
         return (
           <a href={line} key={index} target="_blank" rel="noopener noreferrer">
             {line}
           </a>
         );
       } else {
-        return <p key={index}>{line}</p>; // Just display the line if it's not a link
+        return <p key={index}>{line}</p>;
       }
     });
   };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import empty from './assets/generated_images/empty.png';
@@ -8,7 +8,7 @@ import one from './assets/generated_images/generated_one.png';
 import two from './assets/generated_images/generated_two.png';
 import three from './assets/generated_images/generated_three.png';
 import four from './assets/generated_images/generated_four.png';
-import "./StudentView.css"; // Import the CSS
+import "./StudentView.css";
 
 const initialImages = [empty, one, two, three, four];
 

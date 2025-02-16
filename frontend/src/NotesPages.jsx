@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  // Import Link
+import { Link } from 'react-router-dom';
 import './NotesPage.css';
 import logo2 from './assets/pdf_lecture.png'; 
 

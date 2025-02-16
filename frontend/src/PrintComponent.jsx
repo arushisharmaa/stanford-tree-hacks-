@@ -1,14 +1,14 @@
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
-import './PrintComponent.css'; // Import your styles
+import './PrintComponent.css';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 import one from './assets/generated_images/generated_one.png';
 import four from './assets/generated_images/generated_four.png';
 import geminiLogo from './assets/gemini-color.png';
 import sendLogo from './assets/send-image.jpg';
 import SummaryDisplay from './SummaryDisplay';
-import ResourcesDisplay from './Resources'; // Importing ResourcesDisplay
-import QuizDisplay from './QuizDisplay'; // Importing QuizDisplay
+import ResourcesDisplay from './Resources';
+import QuizDisplay from './QuizDisplay';
 
 const PrintableDocument = () => {
   const printRef = useRef(null);
@@ -102,7 +102,6 @@ const PrintableDocument = () => {
         {response && <div className="chat-response">{response}</div>}
       </div>
 
-      {/* Resources Display positioned in the bottom right corner */}
       <div className="resources-container">
         <ResourcesDisplay />
       </div>

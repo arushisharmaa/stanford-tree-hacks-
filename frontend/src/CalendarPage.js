@@ -96,7 +96,6 @@ const Calendar = () => {
   const daysInMonth = eachDayOfInterval({ start: startOfWeekMonth, end: endOfWeekMonth });
   const formattedMonth = format(currentMonth, 'MMMM yyyy');
 
-  // Adding the Escape key listener
   useEffect(() => {
     const handleEscapeKey = (e) => {
       if (e.key === 'Escape') {
