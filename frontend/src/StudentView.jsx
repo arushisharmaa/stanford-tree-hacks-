@@ -25,6 +25,8 @@ const StudentView = () => {
 
   // This function will handle pasting an image
   const handlePaste = (e) => {
+    e.preventDefault(); // Prevent the default paste behavior
+  
     const items = e.clipboardData.items;
     for (let i = 0; i < items.length; i++) {
       const item = items[i];
@@ -34,24 +36,25 @@ const StudentView = () => {
         
         reader.onloadend = () => {
           const imageDataUrl = reader.result;
-
+  
           // Get the current selection and insert the image
           const selection = window.getSelection();
           const range = selection.getRangeAt(0);
-
+  
           const img = document.createElement('img');
           img.src = imageDataUrl;
           img.alt = "Pasted Image";
           img.style.maxWidth = "100%"; // Optional: Scale the image to fit within the container
-
+  
           range.deleteContents(); // Remove the selected content (if any)
           range.insertNode(img); // Insert the image at the current position
         };
-
+  
         reader.readAsDataURL(blob);
       }
     }
   };
+  
   
 
   const settings = {
