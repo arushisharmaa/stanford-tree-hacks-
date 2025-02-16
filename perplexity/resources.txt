@@ -1,6 +1,6 @@
 1. YouTube video titles and channels:
-- "Linked Lists vs Arrays: Which One to Choose?" by CS Dojo
-- "Mastering Linked List Data Structure in 30 Minutes" by freeCodeCamp.org
+- "Linked Lists vs Arrays: Understanding the Differences" by CS Dojo
+- "Mastering Linked List Implementation in Java" by Coding with John
 
 2. Website resource:
 GeeksforGeeks - Linked List Data Structure
