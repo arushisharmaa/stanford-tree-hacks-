@@ -1,105 +1,176 @@
 /* Full-page styling */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-  }
-  
-  .cornell-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 20px;
-  }
-  
-  /* Header Section */
-  .cornell-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0077b6;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-  }
-  
-  .header-input {
-    flex: 1;
-    margin: 0 10px;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-  }
-  
-  /* Main body layout */
-  .cornell-body {
-    display: flex;
-    flex: 1;
-    gap: 20px;
-  }
-  
-  /* Image Carousel (Left Column) */
-  .cornell-left-column {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .carousel-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .carousel-image {
-    width: 100%;
-    border-radius: 8px;
-  }
-  
-  /* Notes (Right) */
-  .cornell-right-column {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Footer section (Summary) */
-  .cornell-footer {
-    height: 20%;
-    margin-top: 10px;
-  }
-  
-  h3 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-  
-  .cornell-input {
-    flex: 1;
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-  }
-  
-  .cornell-summary {
-    width: 100%;
-    height: 100%;
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.cornell-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Header Section */
+.cornell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0077b6;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.header-input {
+  flex: 1;
+  margin: 0 10px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Main body layout */
+.cornell-body {
+  display: flex;
+  flex: 1;
+  gap: 20px;
+}
+
+/* Image Carousel (Left Column) */
+.cornell-left-column {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Notes (Right) */
+.cornell-right-column {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Footer section (Summary) */
+.cornell-footer {
+  flex-grow: 1; /* Adjusted to take up remaining space with a little gap */
+  margin-top: 10px;
+  margin-bottom: 20px; /* Add some space at the bottom */
+  padding-bottom: 10px; /* Add padding at the bottom to avoid content being too close to the bottom */
+}
+
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.cornell-input {
+  flex: 1;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background: repeating-linear-gradient(
+    white,
+    white 24px,
+    #cbc4c4 25px
+  ); 
+  border-radius: 5px;
+  resize: none;
+}
+
+.cornell-input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 150px;
+  width: 100%;
+  border-radius: 5px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+
+  line-height: 25px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  padding-left: 15px; /* Mimics a margin */
+}
+
+.cornell-summary {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* Kahoot Input */
+.kahoot-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.kahoot-input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.enter-button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.enter-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Submit Button (Right Side) */
+.submit-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  align-self: flex-end; /* Push button to the right */
+  margin-top: 10px; /* Add space above */
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
