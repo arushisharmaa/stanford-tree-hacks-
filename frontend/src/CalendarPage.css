@@ -149,4 +149,115 @@
   .close-btn:hover {
     color: #d32f2f;
   }
-    
+
+  .event-modal {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    font-family: Arial, sans-serif;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.modal-header h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal-content {
+    padding-top: 10px;
+}
+
+.due-date {
+    font-size: 14px;
+    color: #333;
+}
+
+.calendar-link {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.calendar-link:hover {
+    text-decoration: underline;
+}
+
+.lock-message {
+    font-size: 14px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.styled-input {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.no-border {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+/* filepath: /Users/mansapatel/stanford-tree-hacks-/frontend/src/CalendarPage.css */
+.styled-input, .styled-button {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  margin: 5px;
+}
+
+
+.styled-button {
+  cursor: pointer;
+  font-style: bold;
+  background-color: white;
+  border: 1px solid;
+}
+
+.styled-button:hover {
+  background-color: #f1bfa5;
+}
+
+.no-border {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+
+.button-link {
+  color: #0056b3;
+
+  font-size: 18px;
+
+}
+
+.button-link:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}

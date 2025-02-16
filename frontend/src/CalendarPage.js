@@ -151,21 +151,25 @@ const Calendar = () => {
       </div>
 
       {selectedDay && (
-        <div className="event-modal">
-          <h3>{format(selectedDay, 'MMMM dd, yyyy')}</h3>
-          <input 
-            type="text" 
-            value={newEvent} 
-            onChange={handleEventChange} 
-            placeholder="Enter event" 
-          />
-          <a href="#" className="link">
-            <button>Go to event details</button>
-          </a>
-          <button onClick={saveEvent}>Save</button>
-          <button onClick={handleCloseModal}>X</button>
+      <div className="event-modal">
+        <div className="modal-header">
+        <input 
+                            type="text" 
+                            value={newEvent} 
+                            onChange={handleEventChange} 
+                            placeholder="Enter event" 
+                            className="styled-input no-border"
+                        />
+          <button className="close-button" onClick={handleCloseModal}>×</button>
         </div>
-      )}
+        <div className="modal-content">
+          <p className="due-date">Meeting Date: {format(selectedDay, 'MMMM dd, yyyy h:mma')}</p>
+          <p><strong>Lecture Recording:</strong> <a href="#" className="calendar-link">www.mocklink.edu</a></p>
+          <button className="button-link" onClick={saveEvent}>Noteworthy PDF</button>
+        </div>
+      </div>
+    )}
+
     </div>
   );
 };
