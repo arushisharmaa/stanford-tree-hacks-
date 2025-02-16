@@ -2,16 +2,15 @@ require('dotenv').config();  // This line should be at the top
 const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch'); // Ensure you have node-fetch installed
-const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY ;  // Load the API key from the .env file
+const API_KEY = "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" ;   // Load the API key from the .env file
 // console.log(PERPLEXITY_KEY);  // Should print your API key if the .env file is loaded correctly
 
 
 
 // File paths
 const NOTES_PATH = path.join(__dirname, "..", "backend", "data", "transcript.txt");
-const QUESTIONS_PATH = path.join(__dirname, "questions.txt");
-const ANSWERS_PATH = path.join(__dirname, "answers.txt");
-
+const QUESTIONS_PATH = path.join(__dirname, "..", "frontend", "public", "questions.txt");
+const ANSWERS_PATH = path.join(__dirname,"..", "frontend", "public", "answers.txt");
 // Function to read the transcript file
 async function readNotes() {
   try {
@@ -46,14 +45,14 @@ async function generateQuiz() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${PERPLEXITY_KEY}`,
+        "Authorization": `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: "sonar-pro",
         messages: [
           {
             role: "system",
-            content: "Generate 10 multiple-choice quiz questions based on the following notes. Each question should have 4 options (A, B, C, D) with one correct answer. Format the response as: \n\nQ1: Question text\nA) Option 1\nB) Option 2\nC) Option 3\nD) Option 4\nAnswer: X\n\nRepeat for all 10 questions.",
+            content: "Generate 3 short open-ended questions based on the following notes.",
           },
           {
             role: "user",

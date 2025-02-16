@@ -1,14 +1,14 @@
-require('dotenv').config(); // Ensure dotenv is at the top
+// require('dotenv').config(); // Ensure dotenv is at the top
 const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch'); // Ensure you have node-fetch installed
-const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY; // Load the API key from the .env file
 
+const API_KEY = "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"; 
 // Define the path to the transcript file
 const transcriptPath = path.join(__dirname, "..", "backend", "data", "transcript.txt");
 
 // Define the path for the summary output file
-const summaryFilePath = path.join(__dirname, "summary.txt");
+const summaryFilePath = path.join(__dirname, "..", "frontend", "public", "summary.txt");
 
 // Function to read the transcript file
 async function readTranscript() {
@@ -39,7 +39,7 @@ async function generateSummary() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${PERPLEXITY_KEY}`,
+        "Authorization": `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
         model: "sonar-pro", // Using the "sonar-pro" model as per the documentation

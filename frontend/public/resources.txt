@@ -1,0 +1,10 @@
+1. YouTube video titles and channels:
+- "Linked Lists vs Arrays: When to Use Each" by CS Dojo
+- "Mastering Linked List Implementation in Java" by Coding with John
+
+2. Website resource:
+GeeksforGeeks - Linked List Data Structure
+https://www.geeksforgeeks.org/data-structures/linked-list/
+
+3. Textbook recommendation:
+"Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, and Clifford Stein (3rd Edition)

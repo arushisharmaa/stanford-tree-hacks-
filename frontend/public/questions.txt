@@ -1,0 +1,7 @@
+Based on the provided transcript and visual description of a linked list, here are 3 short open-ended questions:
+
+1. How does the insertion process in a linked list differ from that in an array, and what advantages does this offer?
+
+2. Why might a linked list be preferable to an array when the size of the data structure is unknown or frequently changing?
+
+3. In what scenarios would the non-contiguous memory allocation of linked lists be beneficial compared to the contiguous storage of arrays?
