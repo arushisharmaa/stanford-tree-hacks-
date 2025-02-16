@@ -1,0 +1,25 @@
+name: Run Python Script
+
+on: [push, pull_request]  # Runs on every push or pull request
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest  # The runner environment
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Fetch the latest code from the repository
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'  # Specify your Python version
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt  # Install necessary Python packages
+
+      - name: Run script with API Key
+        run: python your_script.py
+        env:
+          OPEN_API_KEY: ${{ secrets.OPEN_API_KEY }}
+
