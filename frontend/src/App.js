@@ -32,7 +32,7 @@ function App() {
           </div>
           <ul className="nav-links">
             <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/student-view" className="nav-link">My Calender</Link></li>
+            <li><Link to="/calender" className="nav-link">My Calender</Link></li>
             <li><Link to="/student-view" className="nav-link">Start a New Note</Link></li>
             <li><Link to="/about" className="nav-link">About</Link></li>
           </ul>
