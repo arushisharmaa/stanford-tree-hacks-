@@ -9,6 +9,17 @@
 body {
   background: #ffffff; 
 }
+/* 🌟 Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #ffffff; 
+}
 
 .navbar {
   display: flex;
@@ -41,42 +52,44 @@ body {
   color: #fff;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 45px;
+  width: 45px;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.nav-links-container {
+  display: flex;
+  justify-content: flex-end; /* Push nav links to the right */
+}
+
 .nav-links {
   display: flex;
   list-style: none;
+  gap: 20px;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
-  margin: 0 15px;
   transition: all 0.3s ease-in-out;
+  padding: 8px 12px;
 }
 
 .nav-link:hover {
   text-decoration: underline;
   font-weight: 600;
-}
-
-.navbar {
-  display: flex;
-  align-items: center;
-  background: linear-gradient(to right, #b62c48, #FF859D);
-  padding: 12px 20px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  flex-grow: 1; /* Pushes nav-links to the right */
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 20px; /* Adds space between links */
 }

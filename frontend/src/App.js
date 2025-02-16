@@ -29,27 +29,29 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <nav className="navbar">
-          <div className="logo-container">
-            <img src={logo} alt="App Logo" className="logo" />
-            <span className="logo-text">Noteworthy-Visualize, Capture, Remember.</span>
-          </div>
-          <ul className="nav-links">
-            <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/calender" className="nav-link">My Calender</Link></li>
-            <li><Link to="/courses" className="nav-link">My Courses</Link></li>
-            <li><Link to="/student-view" className="nav-link">Start a New Note</Link></li>
-          </ul>
-        </nav>
+      <nav className="navbar">
+  <div className="logo-container">
+    <img src={logo} alt="App Logo" className="logo" />
+    <span className="logo-text">Noteworthy - Visualize, Capture, Remember.</span>
+  </div>
+  <div className="nav-links-container">
+    <ul className="nav-links">
+      <li><Link to="/" className="nav-link">Home</Link></li>
+      <li><Link to="/calender" className="nav-link">My Calendar</Link></li>
+      <li><Link to="/courses" className="nav-link">My Courses</Link></li>
+      <li><Link to="/student-view" className="nav-link">Start a New Note</Link></li>
+    </ul>
+  </div>
+</nav>
+
 
         <Routes>
-          <Route path="/" element={<WelcomePage />} />
+          <Route path="/" element={<WelcomePage/>} />
           <Route path="/student-view" element={<StudentView />} />
           <Route path="/calender" element={<CalendarPage/>} />
           <Route path="/courses" element={<CoursePage/>} />
           <Route path="/cs314-details" element={<NotesPage />} />
           <Route path="/submitted" element={<FinalNotesPDF/>} />
-          {/* Add more routes if needed */}
         </Routes>
       </div>
     </Router>
