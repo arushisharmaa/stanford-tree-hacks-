@@ -94,3 +94,62 @@ img {
     margin: 20mm;
     size: A4;
 }
+
+.chatbox {
+    width: 50%;
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.chatbox textarea {
+    width: 170%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.chat-response {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* filepath: /Users/mansapatel/stanford-tree-hacks-/frontend/src/FinalNotesPDF.css */
+.chatbox-header {
+    display: flex;
+    align-items: center;
+}
+
+.chatbox-header h3 {
+    margin-right: 10px;
+}
+
+.gemini-logo {
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+}
+
+.textarea-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.styled-textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 10px; /* Adjust margin to create space between image and textarea */
+}
+
+.textarea-logo {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+}
+

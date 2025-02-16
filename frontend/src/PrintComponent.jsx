@@ -1,12 +1,19 @@
-import React, { useRef } from 'react';
+
+import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import './PrintComponent.css'; // Import your styles
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import one from './assets/generated_images/generated_one.png';
 import four from './assets/generated_images/generated_four.png';
+import geminiLogo from './assets/gemini-color.png';
+import sendLogo from './assets/send-image.jpg';
+
 
 const PrintableDocument = () => {
   // Create the ref
   const printRef = useRef(null);
+  const [input, setInput] = useState('');
+  const [response, setResponse] = useState('');
 
   // Handle print function
   const handlePrint = useReactToPrint({
@@ -24,11 +31,23 @@ const PrintableDocument = () => {
     alert("Share button clicked! (Add sharing functionality here)");
   };
 
+  const handleSend = async () => {
+    if (!input) return;
+    try {
+      const genAI = new GoogleGenerativeAI("AIzaSyBNVvgIV0IElrS5VCEDrPZbJC9aOWJCXTM");
+      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const result = await model.generateContent(input);
+      setResponse(result.response.text());
+    } catch (error) {
+      setResponse('Error fetching response');
+    }
+  };
+
 
   return (
     <div className="document-container">
-         {/* Buttons aligned above the document */}
-            <div className="button-container">
+      {/* Buttons aligned above the document */}
+      <div className="button-container">
         <button className="action-button" onClick={handlePrint}>Print</button>
         <button className="action-button" onClick={handleEdit}>Edit</button>
         <button className="action-button" onClick={handleShare}>Share</button>
@@ -38,10 +57,10 @@ const PrintableDocument = () => {
       <div ref={printRef} className="document-content">
         <h1>Linked Lists Lecture</h1>
         <h3>Lecture Summary (sponsored by Perplexity):</h3>
-        <h3>My Class Notes:</h3> 
+        <h3>My Class Notes:</h3>
         <ul>
           <li><strong>What is a Linked List?</strong> A linked list is a linear data structure where each element (node) points to the next node in the sequence.</li>
-          <li><strong>Structure of Linked List:</strong> Each node has two parts: 
+          <li><strong>Structure of Linked List:</strong> Each node has two parts:
             <ul>
               <li>Data: The actual value stored in the node.</li>
               <li>Next: A reference to the next node in the list.</li>
@@ -62,8 +81,29 @@ const PrintableDocument = () => {
         <h3>Linked List Operations</h3>
         <img src={one} alt="Types of Linked Lists" />
       </div>
+      {/* Gemini Chatbox */}
+      <div className="chatbox">
+        <div className="chatbox-header">
+          <h3>Ask Gemini</h3>
+          <img src={geminiLogo} alt="Gemini Logo" className="gemini-logo" />
+        </div>
 
+        <div className="textarea-wrapper">
+          <textarea
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="What can I help you with today..."
+            className="styled-textarea"
+          />
+          <button onClick={handleSend} className="textarea-logo">
+            <img src={sendLogo} alt="Send" className="textarea-logo" />
+          </button>
+        </div>
+
+        {response && <div className="chat-response">{response}</div>}
+      </div>
     </div>
+
   );
 };
 
