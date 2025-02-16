@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';  // Import Link
 import './NotesPage.css';
-import logo2 from './assets/logo2.png'; 
+import logo2 from './assets/pdf_lecture.png'; 
 
 const NotesPage = () => {
     const notes = [
@@ -36,7 +36,7 @@ const NotesPage = () => {
   
               <div className="note-cards">
                   {notes.map((note) => (
-                      <Link to="/submitted" key={note.id} className="note-link">
+                      <Link to="/submitted_notes" key={note.id} className="note-link">
                           <div className="note-card"> 
                               <img src={note.image} alt={note.topic} className="note-image" />
                               <h3>{note.topic}</h3>
