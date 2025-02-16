@@ -8,6 +8,7 @@ import logo from './assets/logo.png';  // Import your logo
 import CalendarPage from './CalendarPage'; 
 import CoursePage from './CoursePage';
 import NotesPage from './NotesPages';
+import FinalNotesPDF from './FinalNotesPDF'; 
 
 
 const socket = io('http://localhost:9002');
@@ -38,7 +39,6 @@ function App() {
             <li><Link to="/calender" className="nav-link">My Calender</Link></li>
             <li><Link to="/courses" className="nav-link">My Courses</Link></li>
             <li><Link to="/student-view" className="nav-link">Start a New Note</Link></li>
-            <li><Link to="/about" className="nav-link">About</Link></li>
           </ul>
         </nav>
 
@@ -48,7 +48,7 @@ function App() {
           <Route path="/calender" element={<CalendarPage/>} />
           <Route path="/courses" element={<CoursePage/>} />
           <Route path="/cs314-details" element={<NotesPage />} />
-          <Route path="/calendar" element={<CalendarPage/>} />
+          <Route path="/submitted" element={<FinalNotesPDF/>} />
           {/* Add more routes if needed */}
         </Routes>
       </div>

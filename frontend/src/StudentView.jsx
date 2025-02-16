@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import empty from './assets/generated_images/empty.png';
@@ -12,6 +13,7 @@ import "./StudentView.css"; // Import the CSS
 const initialImages = [empty, one, two, three, four];
 
 const StudentView = () => {
+  const navigate = useNavigate(); 
   const [notes, setNotes] = useState("");
   const [userName, setUserName] = useState("");
   const [homework, setLectureTopic] = useState("");
@@ -29,7 +31,9 @@ const StudentView = () => {
 
   const handleSubmit = () => {
     console.log("Submitting Notes:", { userName, homework, dueDates, notes });
+    navigate("/submitted"); 
     alert("Notes submitted successfully!");
+    
   };
 
   const settings = {
