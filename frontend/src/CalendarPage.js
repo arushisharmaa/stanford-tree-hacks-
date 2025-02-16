@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { format, startOfMonth, endOfMonth, eachDayOfInterval, addMonths, subMonths, startOfWeek, endOfWeek, isSameMonth, isToday, getDay } from 'date-fns';
 import './CalendarPage.css';
+import { Link } from 'react-router-dom';
 
 const generateRandomEvents = (month) => {
   const start = startOfMonth(month);
@@ -165,8 +166,10 @@ const Calendar = () => {
         </div>
         <div className="modal-content">
           <p className="due-date">Meeting Date: {format(selectedDay, 'MMMM dd, yyyy h:mma')}</p>
-          <p><strong>Lecture Recording:</strong> <a href="#" className="calendar-link">www.mocklink.edu</a></p>
+          <p><strong>Lecture Recording:</strong> <a href="#" className="calendar-link">www.mocklink.edu</a></p>        
+          <Link to="/submitted_notes">
           <button className="button-link" onClick={saveEvent}>Noteworthy PDF</button>
+          </Link>
         </div>
       </div>
     )}
