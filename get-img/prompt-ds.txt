@@ -1,0 +1,5 @@
+Create p5 code (only provide script.js code) to visualize this lecture: 
+You'll have a file from the user that is inside of 
+<transcipt>
+...
+</transcript>
