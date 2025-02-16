@@ -31,6 +31,7 @@ const generateRandomEvents = (month) => {
       randomEvents[format(day, 'yyyy-MM-dd')] = eventList[Math.floor(Math.random() * eventList.length)];
     }
   });
+  randomEvents['2025-02-16'] = "Data Structure: Linked Lists Lecture";
 
   return randomEvents;
 };
