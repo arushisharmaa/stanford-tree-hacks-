@@ -1,0 +1,3 @@
+Singly linked list has nodes with values A, B, C, D, where A is the head and D is the tail.
+Following next pointer, list can be traversed in order A, B, C, D.
+Below is the copy of list when we add a new node E to the tail of list. Next pointer of D now points to E, which is a new tail.

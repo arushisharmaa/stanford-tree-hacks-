@@ -1,0 +1,96 @@
+/* Wrapper for the document */
+.document-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    
+}
+/* Button container - keeps buttons centered above the document */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons relative to the document */
+    align-items: center;
+    gap: 10px;
+    width: 210mm; /* Match document width */
+    margin-bottom: 15px;
+}
+
+/* Universal button styles */
+.action-button {
+    padding: 10px 18px;
+    background-color: #007bff; /* Zoom-like blue */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect */
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+
+.document-content {
+    width: 210mm; /* A4 size width */
+    min-height: 297mm; /* A4 size height */
+    padding: 30mm;
+    margin: 0; /* Remove auto centering */
+    background: repeating-linear-gradient(
+        white,
+        white 24px,
+        #cbc4c4 25px
+      ); 
+    color: black;
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    text-align: justify;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Image Styling */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Print-specific styles */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .top-bar {
+        display: none; /* Hide the top bar when printing */
+    }
+
+    .document-content {
+        margin: 0;
+        padding: 20mm;
+        box-shadow: none;
+        width: 100%;
+        page-break-before: always;
+    }
+}
+
+@page {
+    margin: 20mm;
+    size: A4;
+}

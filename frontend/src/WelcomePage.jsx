@@ -1,5 +1,7 @@
 import React from 'react';
 import './WelcomePage.css'; 
+import { Link } from 'react-router-dom';
+
 
 const WelcomePage = () => {
   return (
@@ -10,7 +12,10 @@ const WelcomePage = () => {
         {/* <img src={logo3} alt="Noteworthy Logo" className="hero-logo"/>  */}
           <h1 className="hero-title">Welcome to Noteworthy!</h1>
           <p className="hero-subtitle">Where We Help You Visualize, Capture, Remember</p>
-          <button className="cta-button">Get Started</button>
+          <Link to="/student-view">
+            <button className="cta-button">Get Started</button>
+          </Link>
+
         </div>
       </section>
 

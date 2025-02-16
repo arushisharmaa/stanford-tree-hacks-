@@ -31,7 +31,7 @@ const StudentView = () => {
 
   const handleSubmit = () => {
     console.log("Submitting Notes:", { userName, homework, dueDates, notes });
-    navigate("/submitted"); 
+    navigate("/submitted_notes"); 
     alert("Notes submitted successfully!");
     
   };
