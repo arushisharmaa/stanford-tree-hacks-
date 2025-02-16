@@ -1,4 +1,3 @@
-/* General layout and styling */
 body {
     font-family: 'Times New Roman', serif;
     font-size: 12pt;
@@ -8,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* === DOCUMENT WRAPPER === */
 .document-container {
     display: relative;
     justify-content: flex-start;
@@ -20,37 +18,35 @@ body {
 
 .button-container {
     display: flex;
-    justify-content: center; /* Keep buttons centered */
+    justify-content: center;
     align-items: center;
     gap: 10px;
-    width: 100%; /* Use full width instead of fixed width */
-    position: relative; /* Ensures it stays above the document */
-    top: 0; /* Aligns to the top */
-    padding: 15px 0; /* Adds some spacing */
-    z-index: 1000; /* Keeps it on top */
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding: 15px 0;
+    z-index: 1000;
 }
 
 .document-container {
     display: flex;
-    flex-direction: column; /* Stack elements properly */
-    align-items: center; /* Ensure content is centered */
+    flex-direction: column;
+    align-items: center;
     gap: 2rem;
     width: 100%;
     padding: 20px;
 }
 
 
-/* === QUIZ CONTAINER === */
 .quiz-container {
-    width: 300px; /* Adjusted width to fit nicely */
-    flex: 1; /* Gives it some space while maintaining proportions */
+    width: 300px;
+    flex: 1;
     margin-top: 20px;
 }
 
-/* === DOCUMENT CONTENT === */
 .document-content {
-    width: 210mm; /* A4 size */
-    min-height: 297mm; /* A4 size */
+    width: 210mm;
+    min-height: 297mm;
     padding: 20mm;
     background: repeating-linear-gradient(white, white 24px, #cbc4c4 25px);
     border: 1px solid #ddd;
@@ -60,7 +56,6 @@ body {
     flex: 2;
 }
 
-/* === BUTTON CONTAINER === */
 .button-container {
     display: flex;
     justify-content: center;
@@ -87,7 +82,6 @@ body {
     background-color: #0056b3;
 }
 
-/* === IMAGE STYLES === */
 .lecture-image {
     display: block;
     margin: 20px auto;
@@ -98,7 +92,6 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* === PRINT-SPECIFIC STYLES === */
 @media print {
     body {
         -webkit-print-color-adjust: exact;
@@ -123,12 +116,11 @@ body {
     size: A4;
 }
 
-/* === CHATBOX STYLES === */
 .chatbox {
     width: 300px;
     max-width: 450px;
     position: fixed;
-    left: 20px; /* Move it to the left side */
+    left: 20px;
     top: 80px;
     padding: 15px;
     border: 1px solid #ccc;
@@ -151,7 +143,6 @@ body {
     height: 30px;
 }
 
-/* TEXTAREA STYLING */
 .textarea-wrapper {
     display: flex;
     align-items: center;
@@ -172,7 +163,6 @@ body {
     cursor: pointer;
 }
 
-/* RESPONSE BOX */
 .chat-response {
     margin-top: 10px;
     padding: 10px;
@@ -180,10 +170,9 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
-/* For the overall document container */
 .document-container {
     position: relative;
-    padding-bottom: 150px; /* Make sure there's space at the bottom for the quiz */
+    padding-bottom: 150px;
   }
   .quiz-container {
     position: fixed;
@@ -200,7 +189,7 @@ body {
     font-size: 1rem;
     line-height: 1.6;
     color: #333;
-    text-align: left; /* Align text properly */
+    text-align: left;
 }
 
 .quiz-question pre {

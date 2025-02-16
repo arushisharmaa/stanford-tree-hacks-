@@ -1,4 +1,4 @@
-require('dotenv').config();  // This line should be at the top
+require('dotenv').config();
 const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch'); // Ensure you have node-fetch installed
@@ -21,7 +21,6 @@ async function readNotes() {
   }
 }
 
-// Function to save content to a file
 async function saveToFile(filename, content) {
   try {
     await fs.writeFile(filename, content, 'utf8');
@@ -31,10 +30,9 @@ async function saveToFile(filename, content) {
   }
 }
 
-// Function to generate MCQs using AI API
 async function generateQuiz() {
   try {
-    const notes = await readNotes(); // Read transcript
+    const notes = await readNotes();
 
     if (!notes.trim()) {
       console.error("Transcript is empty! Cannot generate quiz.");
@@ -70,11 +68,9 @@ async function generateQuiz() {
     const data = await response.json();
     const quizContent = data.choices[0].message.content;
 
-    // Extract questions and answers separately
-    const questions = quizContent.replace(/Answer: [A-D]/g, '').trim(); // Remove answers
-    const answers = quizContent.match(/Answer: [A-D]/g)?.join('\n') || ''; // Extract answers
+    const questions = quizContent.replace(/Answer: [A-D]/g, '').trim();
+    const answers = quizContent.match(/Answer: [A-D]/g)?.join('\n') || '';
 
-    // Save questions and answers
     await saveToFile(QUESTIONS_PATH, questions);
     await saveToFile(ANSWERS_PATH, answers);
 
@@ -83,5 +79,4 @@ async function generateQuiz() {
   }
 }
 
-// Run the quiz generation
 generateQuiz();

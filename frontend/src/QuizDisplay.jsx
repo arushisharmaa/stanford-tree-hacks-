@@ -5,7 +5,7 @@ export default function QuizDisplay() {
   const [quizText, setQuizText] = useState("");
 
   useEffect(() => {
-    fetch("/questions.txt") // Ensure this path is correct for your project
+    fetch("/questions.txt")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch quiz file");

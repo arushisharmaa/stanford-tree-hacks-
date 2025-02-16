@@ -1,4 +1,4 @@
-/* Wrapper for Gemini and ResourcesDisplay side by side */
+
 .content-wrapper {
   display: flex;           /* Align the items horizontally */
   justify-content: flex-start; /* Align items to the left */
@@ -7,7 +7,6 @@
   position: relative;      /* Ensure relative positioning for resources */
 }
 
-/* Styling for the Resources container */
 .resources-container {
   width: 400px;        /* Set width of the resources box */
   max-height: 80vh;    /* Maximum height of 80% of the viewport height */
@@ -24,32 +23,30 @@
   border: 1px solid #ccc;  /* Optional: Add a light border for clarity */
 }
 
-/* Add a border around the entire Resources container */
 .resources-container-wrapper {
-  border: 3px solid #333;  /* Solid border around the entire box */
-  padding: 10px;            /* Space between the border and the content */
-  border-radius: 15px;      /* Rounded corners for the box */
-  background-color: #f0f0f0; /* Light background for the box */
-  margin-bottom: 20px;      /* Space below the box */
+  border: 3px solid #333;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #f0f0f0;
+  margin-bottom: 20px;
 }
 
-/* Styling for links within Resources container */
 .resources-container a {
-  color: #007bff;  /* Bootstrap blue for links */
-  text-decoration: none;  /* Remove underline */
-  font-weight: bold;      /* Make links stand out */
-  display: block;         /* Make links take up full line */
-  margin-bottom: 8px;     /* Space between each link */
-  transition: color 0.3s ease; /* Smooth color transition on hover */
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
 }
 
 .resources-container a:hover {
-  color: #0056b3; /* Darker blue on hover */
+  color: #0056b3; 
 }
 
 .resources-container h2 {
-  font-size: 18px;   /* Heading size */
-  margin-bottom: 12px; /* Space below heading */
-  color: #444;        /* Slightly darker text for headings */
-  font-weight: bold;  /* Bold heading */
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #444;
+  font-weight: bold;
 }

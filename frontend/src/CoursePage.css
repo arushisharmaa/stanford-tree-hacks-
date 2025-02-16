@@ -11,13 +11,13 @@
   
   .dashboard-title {
     font-size: 3rem;
-    color: #2a4365; /* Deep blue */
+    color: #2a4365;
     margin-bottom: 10px;
   }
   
   .dashboard-subtitle {
     font-size: 1.5rem;
-    color: #4a5568; /* Dark gray */
+    color: #4a5568;
     margin-bottom: 30px;
     font-weight: 300;
   }
@@ -26,29 +26,29 @@
   .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Increased min-width */
-    gap: 30px; /* Space between cards */
+    gap: 30px;
     max-width: 1200px;
     width: 100%;
-    padding: 0 20px; /* Optional horizontal padding */
+    padding: 0 20px;
   }
   
   .course-group {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Space between the course groups */
+    gap: 40px;
   }
   
   
   .card {
     background-color: #ffffff;
-    border-radius: 15px; /* Slightly rounded for a smoother look */
-    padding: 30px; /* Increased padding for larger cards */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Stronger shadow for more depth */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
-    height: 300px; /* Fixed height to make it bigger */
+    height: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Ensures even space for content */
+    justify-content: space-between;
   }
   
   .card:hover {
@@ -56,24 +56,24 @@
   }
   
   .card h3 {
-    font-size: 2rem; /* Slightly larger font for titles */
-    color: #2c5282; /* Deep blue */
+    font-size: 2rem;
+    color: #2c5282;
     margin-bottom: 10px;
   }
   
   .course-description {
-    font-size: 1.1rem; /* Larger font for readability */
+    font-size: 1.1rem;
     color: #4a5568;
     margin-bottom: 10px;
   }
   
   .card p {
-    font-size: 1.1rem; /* Slightly larger font for paragraph */
-    color: #2d3748; /* Darker gray */
+    font-size: 1.1rem;
+    color: #2d3748;
     margin: 5px 0;
   }
   
   strong {
-    color: #1a202c; /* Darkest gray */
+    color: #1a202c;
   }
   

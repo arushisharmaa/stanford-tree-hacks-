@@ -1,9 +1,19 @@
+require('dotenv').config();  // This line should be at the top
 const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch'); // Ensure you have node-fetch installed
-const API_KEY = "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"  ; // Load  the API key from the .env file
-console.log(API_KEY);  // Should print your API key if the .env file is loaded correctly
+const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY ;  // Load the API key from the .env file
+// console.log(PERPLEXITY_KEY);  // Should print your API key if the .env file is loaded correctly
 
+
+
+// const fs = require('fs').promises;
+// const path = require('path');
+// const fetch = require('node-fetch'); // Ensure you have node-fetch installed
+
+// require('dotenv').config();
+
+// const API_KEY = process.env.PERPLEXITY_API_KEY;
 
 
 
@@ -11,7 +21,6 @@ console.log(API_KEY);  // Should print your API key if the .env file is loaded c
 const NOTES_PATH = path.join(__dirname, "..", "backend", "data", "transcript.txt");
 const RESOURCES_PATH = path.join(__dirname, "..", "frontend", "public", "resources.txt");
 
-// Function to read the transcript file
 async function readNotes() {
   try {
     return await fs.readFile(NOTES_PATH, "utf8");
@@ -21,7 +30,6 @@ async function readNotes() {
   }
 }
 
-// Function to save content to a file
 async function saveToFile(filename, content) {
   try {
     await fs.writeFile(filename, content, "utf8");
@@ -31,10 +39,9 @@ async function saveToFile(filename, content) {
   }
 }
 
-// Function to generate learning resources
 async function generateResources() {
   try {
-    const notes = await readNotes(); // Read transcript
+    const notes = await readNotes();
 
     if (!notes.trim()) {
       console.error("Transcript is empty! Cannot generate resources.");
@@ -73,7 +80,6 @@ async function generateResources() {
     const data = await response.json();
     const resourcesContent = data.choices[0].message.content;
 
-    // Save resources
     await saveToFile(RESOURCES_PATH, resourcesContent);
 
   } catch (error) {
@@ -81,5 +87,4 @@ async function generateResources() {
   }
 }
 
-// Run the resource generation
 generateResources();

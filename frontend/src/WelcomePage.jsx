@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 const WelcomePage = () => {
   return (
     <div className="home-page">
-      {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
-        {/* <img src={logo3} alt="Noteworthy Logo" className="hero-logo"/>  */}
           <h1 className="hero-title">Welcome to Noteworthy!</h1>
           <p className="hero-subtitle">Where We Help You Visualize, Capture, Remember</p>
           <Link to="/student-view">
@@ -19,7 +17,6 @@ const WelcomePage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="features">
         <div className="feature">
           <h3 className="feature-title">Visualize</h3>
@@ -35,7 +32,6 @@ const WelcomePage = () => {
         </div>
       </section>
 
-      {/* Footer Section */}
       <footer className="footer">
         <p>&copy; 2025 Noteworthy. All Rights Reserved.</p>
       </footer>

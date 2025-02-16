@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // require('dotenv').config(); // Ensure dotenv is at the top
 const fs = require('fs').promises;
 const path = require('path');
@@ -9,8 +10,18 @@ const transcriptPath = path.join(__dirname, "..", "backend", "data", "transcript
 
 // Define the path for the summary output file
 const summaryFilePath = path.join(__dirname, "..", "frontend", "public", "summary.txt");
+=======
+require('dotenv').config();
+const fs = require('fs').promises;
+const path = require('path');
+const fetch = require('node-fetch');
+const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY;
 
-// Function to read the transcript file
+const transcriptPath = path.join(__dirname, "..", "backend", "data", "transcript.txt");
+
+const summaryFilePath = path.join(__dirname, "summary.txt");
+>>>>>>> fc697d17c2d0f8b98c456e4cfd7ef2ec239a0cce
+
 async function readTranscript() {
   try {
     const data = await fs.readFile(transcriptPath, "utf8");
@@ -20,20 +31,17 @@ async function readTranscript() {
   }
 }
 
-// Function to save summary to a file
 async function saveSummaryToFile(summary) {
   try {
     await fs.writeFile(summaryFilePath, summary, "utf8");
-    // console.log("Summary saved to:", summaryFilePath);
   } catch (err) {
     console.error("Error writing summary to file:", err);
   }
 }
 
-// Function to send request to Perplexity API
 async function generateSummary() {
   try {
-    const notes = await readTranscript(); // Read transcript dynamically
+    const notes = await readTranscript();
 
     const response = await fetch("https://api.perplexity.ai/chat/completions", {
       method: "POST",
@@ -42,38 +50,34 @@ async function generateSummary() {
         "Authorization": `Bearer ${API_KEY}`,
       },
       body: JSON.stringify({
-        model: "sonar-pro", // Using the "sonar-pro" model as per the documentation
+        model: "sonar-pro",
         messages: [
           {
             role: "system",
-            content: "Be precise and concise; summarize in a maximum of four sentences.", // System instruction
+            content: "Be precise and concise; summarize in a maximum of four sentences.",
           },
           {
             role: "user",
-            content: notes, // Sending the transcript as user input
+            content: notes,
           },
         ],
       }),
     });
 
-    // Check if the response status is OK (status code 200)
     if (!response.ok) {
       console.error(`Error: Received ${response.status} status from API.`);
       const errorText = await response.text();
-      console.log("Error response body:", errorText); // Log the error body
+      console.log("Error response body:", errorText);
       return;
     }
 
-    const text = await response.text(); // Get the raw response text
-    // console.log("Raw API response:", text);
+    const text = await response.text();
 
-    // If the response is not empty and seems like JSON, try parsing it
     if (text) {
       try {
-        const data = JSON.parse(text); // Manually parse the JSON
-        const summary = data.choices[0].message.content; // Extract summary
+        const data = JSON.parse(text);
+        const summary = data.choices[0].message.content;
 
-        // Save the summary to a text file
         await saveSummaryToFile(summary);
       } catch (err) {
         console.error("Error parsing the API response:", err);
@@ -86,5 +90,4 @@ async function generateSummary() {
   }
 }
 
-// Run the summary function
 generateSummary();
