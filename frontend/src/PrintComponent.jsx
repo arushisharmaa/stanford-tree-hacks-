@@ -7,6 +7,7 @@ import one from './assets/generated_images/generated_one.png';
 import four from './assets/generated_images/generated_four.png';
 import geminiLogo from './assets/gemini-color.png';
 import sendLogo from './assets/send-image.jpg';
+import summary from './perplexity/summary.txt';
 
 
 const PrintableDocument = () => {
@@ -57,6 +58,7 @@ const PrintableDocument = () => {
       <div ref={printRef} className="document-content">
         <h1>Linked Lists Lecture</h1>
         <h3>Lecture Summary (sponsored by Perplexity):</h3>
+        <pre>{summary}</pre>
         <h3>My Class Notes:</h3>
         <ul>
           <li><strong>What is a Linked List?</strong> A linked list is a linear data structure where each element (node) points to the next node in the sequence.</li>

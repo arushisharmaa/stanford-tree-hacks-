@@ -1,0 +1,70 @@
+Here are 10 multiple-choice quiz questions based on the provided notes about linked lists and arrays:
+
+Q1: What is a key difference between arrays and linked lists in terms of memory storage?
+A) Arrays are stored in non-contiguous memory locations
+B) Linked lists are stored in contiguous memory locations
+C) Arrays are stored in contiguous memory locations
+D) Both are stored in contiguous memory locations
+
+
+Q2: In a linked list, what connects one element to another?
+A) Indexes
+B) Pointers
+C) Memory addresses
+D) Data values
+
+
+Q3: What is a limitation of arrays compared to linked lists?
+A) Arrays have variable size
+B) Arrays have fixed size
+C) Arrays use less memory
+D) Arrays are slower to access
+
+
+Q4: Which part of a linked list node typically contains the data?
+A) Next pointer
+B) Previous pointer
+C) Head pointer
+D) Data field
+
+
+Q5: What does the 'head' of a linked list refer to?
+A) The last node
+B) The middle node
+C) The first node
+D) Any node in the list
+
+
+Q6: In the given linked list example, what happens when node E is inserted?
+A) It becomes the new head
+B) It is inserted between C and D
+C) It is added to the end of the list
+D) It replaces node C
+
+
+Q7: What does the 'tail' node's next pointer typically point to in a singly linked list?
+A) The head node
+B) The previous node
+C) NULL
+D) Itself
+
+
+Q8: How is memory allocated for arrays compared to linked lists?
+A) Arrays use dynamic memory allocation
+B) Linked lists use static memory allocation
+C) Arrays use static memory allocation at compile time
+D) Both use the same memory allocation method
+
+
+Q9: What is an advantage of linked lists over arrays?
+A) Faster element access
+B) Less memory usage
+C) Simpler implementation
+D) Dynamic size adjustment
+
+
+Q10: How does a traversal of a linked list typically begin?
+A) From the tail node
+B) From the head node
+C) From any random node
+D) From the middle node
