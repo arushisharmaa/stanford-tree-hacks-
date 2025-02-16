@@ -1,20 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import logo from './assets/logo.png';  // Import your logo
+import one from './assets/generated_images/generated_one.png';
+// import two from './assets/generated_images/generated_two.png';
+import three from './assets/generated_images/generated_three.png';
+// import four from './assets/generated_images/generated_four.png';
 import "./StudentView.css";
 
-const images = [
-  <img src={logo} alt="App Logo" className="logo" />, 
-  "https://ibb.co/Pz9mydjv",
-  "https://ibb.co/Pz9mydjv",
-  "https://ibb.co/Pz9mydjv",
-  "https://ibb.co/Pz9mydjv",
-  "https://ibb.co/Pz9mydjv",
-  "https://ibb.co/Pz9mydjv",
-  "https://ibb.co/Pz9mydjv",
-  "https://ibb.co/Pz9mydjv",
+const initialImages = [git 
+  one, // Directly store the image URL paths
+  // two,
+  three,
+  // four,
 ];
 
 const StudentView = () => {
@@ -22,16 +20,34 @@ const StudentView = () => {
   const [userName, setUserName] = useState("");
   const [homework, setLectureTopic] = useState("");
   const [dueDates, setStudentID] = useState("");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0); // Track which image to display
+  const sliderRef = useRef(null); // Reference to the slider
 
   const settings = {
-    dots: true,
-    infinite: true,
+    dots: false, // Set to false to remove dots
+    infinite: true, // Disable infinite scrolling
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    autoplay: false, // Disable autoplay because we will control the images manually
   };
+
+  useEffect(() => {
+    if (currentImageIndex < initialImages.length - 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => prevIndex + 1); // Move to next image
+      }, 5000); // Change image every 1.5 seconds
+
+      // Cleanup the interval when the component unmounts
+      return () => clearInterval(interval);
+    }
+  }, [currentImageIndex]);
+
+  useEffect(() => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(currentImageIndex); // Move the slider to the current image
+    }
+  }, [currentImageIndex]);
 
   return (
     <div className="cornell-container">
@@ -64,10 +80,10 @@ const StudentView = () => {
         {/* Image Carousel (Left Column) */}
         <div className="cornell-left-column">
           <h3>Noteworthy AI Images</h3>
-          <Slider {...settings}>
-            {images.map((img, index) => (
+          <Slider ref={sliderRef} {...settings}>
+            {initialImages.map((img, index) => (
               <div key={index} className="carousel-slide">
-                <img src={img} alt={`Question ${index + 1}`} className="carousel-image" />
+                <img src={img} alt={`Generated Image ${index + 1}`} className="carousel-image" />
               </div>
             ))}
           </Slider>

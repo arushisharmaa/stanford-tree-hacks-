@@ -1,0 +1,107 @@
+/* General page styles */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f0f4f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.notes-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #f0f4f8;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.notes-title {
+  font-size: 2.5rem;
+  color: #2b6cb0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Styling for the note cards grid */
+.note-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 40px;
+  padding: 0 15px;
+}
+
+.note-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-card:hover {
+  transform: scale(1.05);
+}
+
+.note-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.note-card h3 {
+  font-size: 1.3rem;
+  color: #2b6cb0;
+  margin-bottom: 10px;
+}
+
+.note-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.note-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .note-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .note-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .note-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .note-cards {
+    grid-template-columns: 1fr;
+  }
+}
