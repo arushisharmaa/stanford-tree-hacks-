@@ -9,6 +9,7 @@ import CalendarPage from './CalendarPage';
 import CoursePage from './CoursePage';
 import NotesPage from './NotesPages';
 
+
 const socket = io('http://localhost:9002');
 
 function App() {
@@ -34,8 +35,12 @@ function App() {
           </div>
           <ul className="nav-links">
             <li><Link to="/" className="nav-link">Home</Link></li>
+<<<<<<< HEAD
             <li><Link to="/calender" className="nav-link">My Calender</Link></li>
             <li><Link to="/courses" className="nav-link">My Courses</Link></li>
+=======
+            <li><Link to="/calendar" className="nav-link">My Calendar</Link></li>
+>>>>>>> d95aa06eca75ed39742b7eb50f52f78a29f755af
             <li><Link to="/student-view" className="nav-link">Start a New Note</Link></li>
             <li><Link to="/about" className="nav-link">About</Link></li>
           </ul>
@@ -44,9 +49,13 @@ function App() {
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/student-view" element={<StudentView />} />
+<<<<<<< HEAD
           <Route path="/calender" element={<CalendarPage/>} />
           <Route path="/courses" element={<CoursePage/>} />
           <Route path="/cs314-details" element={<NotesPage />} />
+=======
+          <Route path="/calendar" element={<CalendarPage/>} />
+>>>>>>> d95aa06eca75ed39742b7eb50f52f78a29f755af
           {/* Add more routes if needed */}
         </Routes>
       </div>
