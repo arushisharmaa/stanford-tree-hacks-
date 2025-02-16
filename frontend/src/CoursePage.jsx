@@ -13,7 +13,7 @@ const CoursePage = () => {
       link: "/cs314-details" 
     },
     { 
-      title: "CS36M: MACHINE LEARNING ONE", 
+      title: "CS36M: MACHINE LEARNING", 
       description: "Introduction to machine learning algorithms and techniques, focusing on supervised and unsupervised learning.",
       professor: "Dr. Alice Johnson",
       time: "TTh 2:00 PM - 3:30 PM",
@@ -21,7 +21,7 @@ const CoursePage = () => {
       link: "/cs314-details" 
     },
     { 
-      title: "M341K: INTRODUCTION TO NUMBER THEORY", 
+      title: "M341K: NUMBER THEORY", 
       description: "An exploration of number theory concepts such as prime numbers, divisibility, and modular arithmetic.",
       professor: "Dr. Robert Brown",
       time: "MWF 1:00 PM - 2:00 PM",

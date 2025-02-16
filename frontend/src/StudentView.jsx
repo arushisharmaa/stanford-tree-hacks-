@@ -49,7 +49,7 @@ const StudentView = () => {
     if (currentImageIndex < initialImages.length - 1) {
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) => prevIndex + 1);
-      }, 7000);
+      }, 9000);
       return () => clearInterval(interval);
     }
   }, [currentImageIndex]);

@@ -1,0 +1,55 @@
+/* Wrapper for Gemini and ResourcesDisplay side by side */
+.content-wrapper {
+  display: flex;           /* Align the items horizontally */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: flex-start; /* Align items to the top of the container */
+  gap: 20px;               /* Space between the two components */
+  position: relative;      /* Ensure relative positioning for resources */
+}
+
+/* Styling for the Resources container */
+.resources-container {
+  width: 400px;        /* Set width of the resources box */
+  max-height: 80vh;    /* Maximum height of 80% of the viewport height */
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  overflow-y: auto;
+  line-height: 1.6;
+  z-index: 1000; /* Ensure it's not overlapped */
+  font-size: 14px;
+  border: 1px solid #ccc;  /* Optional: Add a light border for clarity */
+}
+
+/* Add a border around the entire Resources container */
+.resources-container-wrapper {
+  border: 3px solid #333;  /* Solid border around the entire box */
+  padding: 10px;            /* Space between the border and the content */
+  border-radius: 15px;      /* Rounded corners for the box */
+  background-color: #f0f0f0; /* Light background for the box */
+  margin-bottom: 20px;      /* Space below the box */
+}
+
+/* Styling for links within Resources container */
+.resources-container a {
+  color: #007bff;  /* Bootstrap blue for links */
+  text-decoration: none;  /* Remove underline */
+  font-weight: bold;      /* Make links stand out */
+  display: block;         /* Make links take up full line */
+  margin-bottom: 8px;     /* Space between each link */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.resources-container a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+
+.resources-container h2 {
+  font-size: 18px;   /* Heading size */
+  margin-bottom: 12px; /* Space below heading */
+  color: #444;        /* Slightly darker text for headings */
+  font-weight: bold;  /* Bold heading */
+}

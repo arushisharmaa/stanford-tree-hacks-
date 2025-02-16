@@ -1,28 +1,78 @@
-/* Wrapper for the document */
+/* General layout and styling */
+body {
+    font-family: 'Times New Roman', serif;
+    font-size: 12pt;
+    line-height: 1.6;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+/* === DOCUMENT WRAPPER === */
 .document-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: relative;
     justify-content: flex-start;
-    height: 100%;
+    align-items: flex-start;
+    gap: 2rem;
     width: 100%;
     padding: 20px;
-    
 }
-/* Button container - keeps buttons centered above the document */
+
 .button-container {
     display: flex;
-    justify-content: center; /* Center buttons relative to the document */
+    justify-content: center; /* Keep buttons centered */
     align-items: center;
     gap: 10px;
-    width: 210mm; /* Match document width */
+    width: 100%; /* Use full width instead of fixed width */
+    position: relative; /* Ensures it stays above the document */
+    top: 0; /* Aligns to the top */
+    padding: 15px 0; /* Adds some spacing */
+    z-index: 1000; /* Keeps it on top */
+}
+
+.document-container {
+    display: flex;
+    flex-direction: column; /* Stack elements properly */
+    align-items: center; /* Ensure content is centered */
+    gap: 2rem;
+    width: 100%;
+    padding: 20px;
+}
+
+
+/* === QUIZ CONTAINER === */
+.quiz-container {
+    width: 300px; /* Adjusted width to fit nicely */
+    flex: 1; /* Gives it some space while maintaining proportions */
+    margin-top: 20px;
+}
+
+/* === DOCUMENT CONTENT === */
+.document-content {
+    width: 210mm; /* A4 size */
+    min-height: 297mm; /* A4 size */
+    padding: 20mm;
+    background: repeating-linear-gradient(white, white 24px, #cbc4c4 25px);
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    text-align: justify;
+    margin-left: 0;
+    flex: 2;
+}
+
+/* === BUTTON CONTAINER === */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 210mm;
     margin-bottom: 15px;
 }
 
-/* Universal button styles */
 .action-button {
     padding: 10px 18px;
-    background-color: #007bff; /* Zoom-like blue */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 6px;
@@ -33,34 +83,12 @@
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover effect */
 .action-button:hover {
     background-color: #0056b3;
 }
 
-
-.document-content {
-    width: 210mm; /* A4 size width */
-    min-height: 297mm; /* A4 size height */
-    padding: 30mm;
-    margin: 0; /* Remove auto centering */
-    background: repeating-linear-gradient(
-        white,
-        white 24px,
-        #cbc4c4 25px
-      ); 
-    color: black;
-    font-family: 'Times New Roman', serif;
-    font-size: 12pt;
-    line-height: 1.6;
-    text-align: justify;
-    border: 1px solid #ddd;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-}
-
-
-/* Image Styling */
-img {
+/* === IMAGE STYLES === */
+.lecture-image {
     display: block;
     margin: 20px auto;
     max-width: 100%;
@@ -70,15 +98,15 @@ img {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Print-specific styles */
+/* === PRINT-SPECIFIC STYLES === */
 @media print {
     body {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
-    .top-bar {
-        display: none; /* Hide the top bar when printing */
+    .top-bar, .chatbox {
+        display: none;
     }
 
     .document-content {
@@ -95,30 +123,20 @@ img {
     size: A4;
 }
 
+/* === CHATBOX STYLES === */
 .chatbox {
-    width: 50%;
-    margin-top: 20px;
+    width: 300px;
+    max-width: 450px;
+    position: fixed;
+    left: 20px; /* Move it to the left side */
+    top: 80px;
     padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-.chatbox textarea {
-    width: 170%;
-    height: 50px;
-    margin-bottom: 10px;
-    padding: 5px;
-}
-
-.chat-response {
-    margin-top: 10px;
-    padding: 10px;
     background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* filepath: /Users/mansapatel/stanford-tree-hacks-/frontend/src/FinalNotesPDF.css */
+
 .chatbox-header {
     display: flex;
     align-items: center;
@@ -129,10 +147,11 @@ img {
 }
 
 .gemini-logo {
-    width: 30px; /* Adjust the size as needed */
-    height: 30px; /* Adjust the size as needed */
+    width: 30px;
+    height: 30px;
 }
 
+/* TEXTAREA STYLING */
 .textarea-wrapper {
     display: flex;
     align-items: center;
@@ -140,16 +159,60 @@ img {
 }
 
 .styled-textarea {
-    width: 100%;
+    flex: 1;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-left: 10px; /* Adjust margin to create space between image and textarea */
 }
 
 .textarea-logo {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px; /* Adjust the size as needed */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
 }
 
+/* RESPONSE BOX */
+.chat-response {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+/* For the overall document container */
+.document-container {
+    position: relative;
+    padding-bottom: 150px; /* Make sure there's space at the bottom for the quiz */
+  }
+  .quiz-container {
+    position: fixed;
+    background-color: #f9f9f9;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.quiz-question {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: left; /* Align text properly */
+}
+
+.quiz-question pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+}

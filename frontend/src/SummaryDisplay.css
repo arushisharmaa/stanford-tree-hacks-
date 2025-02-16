@@ -1,0 +1,23 @@
+.summary-container {
+    padding: 1rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    background-color: #fffbe6; /* Light yellow, like a notes background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #ffcc00; /* Gives a sticky-note feel */
+    font-family: "Arial", sans-serif;
+  }
+  
+  .summary-container pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-x: auto;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #333; /* Darker text for readability */
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+  }
+  

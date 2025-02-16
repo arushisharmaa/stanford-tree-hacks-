@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from 'react';
 import { useReactToPrint } from 'react-to-print';
 import './PrintComponent.css'; // Import your styles
@@ -7,22 +6,20 @@ import one from './assets/generated_images/generated_one.png';
 import four from './assets/generated_images/generated_four.png';
 import geminiLogo from './assets/gemini-color.png';
 import sendLogo from './assets/send-image.jpg';
-import summary from './perplexity/summary.txt';
-
+import SummaryDisplay from './SummaryDisplay';
+import ResourcesDisplay from './Resources'; // Importing ResourcesDisplay
+import QuizDisplay from './QuizDisplay'; // Importing QuizDisplay
 
 const PrintableDocument = () => {
-  // Create the ref
   const printRef = useRef(null);
   const [input, setInput] = useState('');
   const [response, setResponse] = useState('');
 
-  // Handle print function
   const handlePrint = useReactToPrint({
     contentRef: printRef,
     documentTitle: 'Print Document',
     onAfterPrint: () => console.log('Printed Successfully!')
   });
-
 
   const handleEdit = () => {
     alert("Edit button clicked! (Add edit functionality here)");
@@ -44,21 +41,20 @@ const PrintableDocument = () => {
     }
   };
 
-
   return (
     <div className="document-container">
-      {/* Buttons aligned above the document */}
-      <div className="button-container">
-        <button className="action-button" onClick={handlePrint}>Print</button>
-        <button className="action-button" onClick={handleEdit}>Edit</button>
-        <button className="action-button" onClick={handleShare}>Share</button>
-      </div>
 
-      {/* The div to be printed */}
-      <div ref={printRef} className="document-content">
+    <div className="button-container">
+            <button className="action-button" onClick={handlePrint}>Print</button>
+            <button className="action-button" onClick={handleEdit}>Edit</button>
+            <button className="action-button" onClick={handleShare}>Share</button>
+          </div>
+
+      {/* The document content */}
+      <div className="document-content" ref={printRef}>
         <h1>Linked Lists Lecture</h1>
-        <h3>Lecture Summary (sponsored by Perplexity):</h3>
-        <pre>{summary}</pre>
+        <h3 className="summary-title">Lecture Summary (sponsored by Perplexity):</h3>
+        <SummaryDisplay />
         <h3>My Class Notes:</h3>
         <ul>
           <li><strong>What is a Linked List?</strong> A linked list is a linear data structure where each element (node) points to the next node in the sequence.</li>
@@ -83,6 +79,7 @@ const PrintableDocument = () => {
         <h3>Linked List Operations</h3>
         <img src={one} alt="Types of Linked Lists" />
       </div>
+
       {/* Gemini Chatbox */}
       <div className="chatbox">
         <div className="chatbox-header">
@@ -104,8 +101,16 @@ const PrintableDocument = () => {
 
         {response && <div className="chat-response">{response}</div>}
       </div>
-    </div>
 
+      {/* Resources Display positioned in the bottom right corner */}
+      <div className="resources-container">
+        <ResourcesDisplay />
+      </div>
+
+    <div className="quiz-container">
+      <QuizDisplay />
+    </div>
+    </div>
   );
 };
 
