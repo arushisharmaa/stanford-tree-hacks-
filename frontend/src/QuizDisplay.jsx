@@ -18,7 +18,7 @@ export default function QuizDisplay() {
 
   return (
     <div className="quiz-container">
-      <h2 className="quiz-title">Google's Gemini Checks Your Understanding:</h2>
+      <h2 className="quiz-title">Perplexity Checks Your Understanding:</h2>
       <div className="quiz-question">
         <pre>{quizText}</pre>
       </div>
