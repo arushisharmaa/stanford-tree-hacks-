@@ -33,7 +33,7 @@ function App() {
           </div>
           <ul className="nav-links">
             <li><Link to="/" className="nav-link">Home</Link></li>
-            <li><Link to="/calender" className="nav-link">My Calender</Link></li>
+            <li><Link to="/calendar" className="nav-link">My Calendar</Link></li>
             <li><Link to="/student-view" className="nav-link">Start a New Note</Link></li>
             <li><Link to="/about" className="nav-link">About</Link></li>
           </ul>
@@ -42,7 +42,7 @@ function App() {
         <Routes>
           <Route path="/" element={<WelcomePage />} />
           <Route path="/student-view" element={<StudentView />} />
-          <Route path="/calender" element={<CalendarPage/>} />
+          <Route path="/calendar" element={<CalendarPage/>} />
           {/* Add more routes if needed */}
         </Routes>
       </div>
