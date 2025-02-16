@@ -1,70 +1,70 @@
-Here are 10 multiple-choice quiz questions based on the provided notes:
+Here are 10 multiple-choice quiz questions based on the provided notes about linked lists and arrays:
 
-Q1: What is the primary purpose of mitosis?
-A) Production of gametes
-B) Sexual reproduction
-C) Growth, repair, and asexual reproduction
-D) Genetic recombination
-
-
-Q2: How many daughter cells are produced in meiosis?
-A) 2
-B) 3
-C) 4
-D) 6
+Q1: What is a key difference between arrays and linked lists in terms of memory storage?
+A) Arrays are stored in non-contiguous memory locations
+B) Linked lists are stored in contiguous memory locations
+C) Arrays are stored in contiguous memory locations
+D) Both are stored in contiguous memory locations
 
 
-Q3: Which process results in genetically identical daughter cells?
-A) Meiosis
-B) Mitosis
-C) Crossing over
-D) Fertilization
+Q2: In a linked list, what connects one element to another?
+A) Indexes
+B) Pointers
+C) Memory addresses
+D) Data values
 
 
-Q4: What is the ploidy of cells produced by meiosis?
-A) Haploid
-B) Diploid
-C) Triploid
-D) Tetraploid
+Q3: What is a limitation of arrays compared to linked lists?
+A) Arrays have variable size
+B) Arrays have fixed size
+C) Arrays use less memory
+D) Arrays are slower to access
 
 
-Q5: Which of the following is NOT a phase of mitosis?
-A) Prophase
-B) Metaphase
-C) Anaphase I
-D) Telophase
+Q4: Which part of a linked list node typically contains the data?
+A) Next pointer
+B) Previous pointer
+C) Head pointer
+D) Data field
 
 
-Q6: During which process does crossing over occur?
-A) Mitosis
-B) Meiosis I
-C) Meiosis II
-D) Cytokinesis
+Q5: What does the 'head' of a linked list refer to?
+A) The last node
+B) The middle node
+C) The first node
+D) Any node in the list
 
 
-Q7: What separates during anaphase of mitosis?
-A) Homologous chromosomes
-B) Sister chromatids
-C) Spindle fibers
-D) Cell membrane
+Q6: In the given linked list example, what happens when node E is inserted?
+A) It becomes the new head
+B) It is inserted between C and D
+C) It is added to the end of the list
+D) It replaces node C
 
 
-Q8: Which statement about meiosis is correct?
-A) It produces two identical daughter cells
-B) It occurs in all body cells
-C) It results in genetic diversity
-D) It maintains the chromosome number
+Q7: What does the 'tail' node's next pointer typically point to in a singly linked list?
+A) The head node
+B) The previous node
+C) NULL
+D) Itself
 
 
-Q9: What is the main difference between the daughter cells produced by mitosis and meiosis?
-A) Number of cells produced
-B) Genetic content
-C) Cell size
-D) Presence of organelles
+Q8: How is memory allocated for arrays compared to linked lists?
+A) Arrays use dynamic memory allocation
+B) Linked lists use static memory allocation
+C) Arrays use static memory allocation at compile time
+D) Both use the same memory allocation method
 
 
-Q10: Which phase of meiosis is most similar to mitosis?
-A) Meiosis I
-B) Meiosis II
-C) Prophase I
-D) Metaphase I
+Q9: What is an advantage of linked lists over arrays?
+A) Faster element access
+B) Less memory usage
+C) Simpler implementation
+D) Dynamic size adjustment
+
+
+Q10: How does a traversal of a linked list typically begin?
+A) From the tail node
+B) From the head node
+C) From any random node
+D) From the middle node

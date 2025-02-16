@@ -1,8 +1,21 @@
+require('dotenv').config();  // This line should be at the top
 const fs = require('fs').promises;
 const path = require('path');
 const fetch = require('node-fetch'); // Ensure you have node-fetch installed
+const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY ;  // Load the API key from the .env file
+// console.log(PERPLEXITY_KEY);  // Should print your API key if the .env file is loaded correctly
 
-const API_KEY = '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'; // Replace with your actual API key
+
+
+// const fs = require('fs').promises;
+// const path = require('path');
+// const fetch = require('node-fetch'); // Ensure you have node-fetch installed
+
+// require('dotenv').config();
+
+// const API_KEY = process.env.PERPLEXITY_API_KEY;
+
+
 
 // File paths
 const NOTES_PATH = path.join(__dirname, "..", "backend", "data", "transcript.txt");
@@ -42,7 +55,7 @@ async function generateResources() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${API_KEY}`,
+        "Authorization": `Bearer ${PERPLEXITY_KEY}`,
       },
       body: JSON.stringify({
         model: "sonar-pro",
@@ -50,7 +63,7 @@ async function generateResources() {
           {
             role: "system",
             content: "Based on the following notes, generate strictly the following: \n" +
-                        "1. Two YouTube video titles that would be helpful for learning this topic.\n" +
+                        "1. Two YouTube video titles that would be helpful for learning this topic and their channels.\n" +
                         "2. One website resource (with URL) that would be useful.\n" +
                         "3. One textbook recommendation (including author and edition if available).\n\n"
           },

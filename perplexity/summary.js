@@ -1,8 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const fetch = require("node-fetch");
-
-const API_KEY = "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";
+require('dotenv').config(); // Ensure dotenv is at the top
+const fs = require('fs').promises;
+const path = require('path');
+const fetch = require('node-fetch'); // Ensure you have node-fetch installed
+const PERPLEXITY_KEY = process.env.REACT_APP_PUBLIC_API_KEY; // Load the API key from the .env file
 
 // Define the path to the transcript file
 const transcriptPath = path.join(__dirname, "..", "backend", "data", "transcript.txt");
@@ -11,27 +11,23 @@ const transcriptPath = path.join(__dirname, "..", "backend", "data", "transcript
 const summaryFilePath = path.join(__dirname, "summary.txt");
 
 // Function to read the transcript file
-function readTranscript() {
-  return new Promise((resolve, reject) => {
-    fs.readFile(transcriptPath, "utf8", (err, data) => {
-      if (err) {
-        reject("Error reading the transcript file: " + err);
-      } else {
-        resolve(data);
-      }
-    });
-  });
+async function readTranscript() {
+  try {
+    const data = await fs.readFile(transcriptPath, "utf8");
+    return data;
+  } catch (err) {
+    throw new Error("Error reading the transcript file: " + err);
+  }
 }
 
 // Function to save summary to a file
-function saveSummaryToFile(summary) {
-  fs.writeFile(summaryFilePath, summary, "utf8", (err) => {
-    if (err) {
-      console.error("Error writing summary to file:", err);
-    } else {
-      console.log("Summary saved to:", summaryFilePath);
-    }
-  });
+async function saveSummaryToFile(summary) {
+  try {
+    await fs.writeFile(summaryFilePath, summary, "utf8");
+    // console.log("Summary saved to:", summaryFilePath);
+  } catch (err) {
+    console.error("Error writing summary to file:", err);
+  }
 }
 
 // Function to send request to Perplexity API
@@ -43,7 +39,7 @@ async function generateSummary() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${API_KEY}`,
+        "Authorization": `Bearer ${PERPLEXITY_KEY}`,
       },
       body: JSON.stringify({
         model: "sonar-pro", // Using the "sonar-pro" model as per the documentation
@@ -69,17 +65,19 @@ async function generateSummary() {
     }
 
     const text = await response.text(); // Get the raw response text
-    console.log("Raw API response:", text);
+    // console.log("Raw API response:", text);
 
     // If the response is not empty and seems like JSON, try parsing it
     if (text) {
-      const data = JSON.parse(text); // Manually parse the JSON
-      const summary = data.choices[0].message.content; // Extract summary
+      try {
+        const data = JSON.parse(text); // Manually parse the JSON
+        const summary = data.choices[0].message.content; // Extract summary
 
-      // console.log("Summary:", summary); // Log the summary to the console
-c
-      // Save the summary to a text file
-      saveSummaryToFile(summary);
+        // Save the summary to a text file
+        await saveSummaryToFile(summary);
+      } catch (err) {
+        console.error("Error parsing the API response:", err);
+      }
     } else {
       console.error("Received empty response from API.");
     }
