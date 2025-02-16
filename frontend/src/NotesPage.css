@@ -37,21 +37,27 @@ body {
   padding: 0 15px;
 }
 
+
+.note-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Makes the entire card clickable */
+}
+
 .note-card {
-  background-color: #ffffff;
-  border-radius: 10px;
+  background: #fff;
   padding: 15px;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  cursor: pointer;  /* Makes it look clickable */
 }
 
 .note-card:hover {
   transform: scale(1.05);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
 }
+
 
 .note-image {
   width: 100%;
