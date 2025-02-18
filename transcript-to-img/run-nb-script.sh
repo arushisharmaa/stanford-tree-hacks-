@@ -7,7 +7,7 @@ SERVER_PID=$!
 sleep 2
 
 echo "Running Playwright script..."
-jupyter nbconvert --to notebook --execute nb-script.ipynb
+jupyter nbconvert --to notebook --execute nb-script.ipynb # nb-bio.ipynb
 
 echo "Stopping local server..."
 kill $SERVER_PID

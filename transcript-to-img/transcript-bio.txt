@@ -1,0 +1,4 @@
+DNA is a polymer made from four different nucleotides. These are arranged
+ in a repeating fashion. Each nucleotide consists of alternating sugar 
+ and phosphate sections with one of the four different bases attached to 
+ the sugar.

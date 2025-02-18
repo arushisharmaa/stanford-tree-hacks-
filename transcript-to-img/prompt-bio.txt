@@ -1,0 +1,8 @@
+Create p5 code to visualize this lecture:
+You'll have a file from the user that is inside of 
+<transcipt>
+...
+</transcript>
+
+Do not provide any explanation outside of the script.js code, do not provide description.
+Include setTimeout(() => { saveCanvas('img', 'png'); document.body.setAttribute("data-ready", "true"); }, 500); and in setup().
